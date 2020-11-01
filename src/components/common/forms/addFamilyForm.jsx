@@ -5,17 +5,25 @@ import NavbarNew from '../navbarnew';
 import * as BiIcons from "react-icons/bi";
 import "../../../styles/elementsCss/addFamilyForm.css";
 import { gql, useLazyQuery, useMutation } from '@apollo/client';
+const jwt = require("jsonwebtoken");
 
 
-// jamaat: $jamaat,
+function decodeJamaatFromJWT(){
+    let token = localStorage.getItem("token");
+    const decoded = jwt.verify(token, "fmbchunabhatti" );
+    console.log("decodeJamaatFromJWT -> decoded", decoded.jamaat)
+    return decoded.jamaat;
+
+}
 
 function AddFamilyForm() {
+    const jamaat = decodeJamaatFromJWT()
     const [fullName, setFullName] = useState('');
     const [address, setAddress] = useState('');
     const [mobile_no, setMobileNo] = useState('');
     const [its_id, setIts] = useState('');
     const USER_CREATE = gql`
-        mutation userCreate($its_id: Float!, $first_name: String, $last_name: String, $address: String, $mobile_no: Float!){
+        mutation userCreate($its_id: Float!, $first_name: String, $last_name: String, $address: String, $mobile_no: Float!, $jamaat: MongoID, $imgurl: String){
         userCreateOne(record:{
             its_id: $its_id,
             first_name: $first_name,
@@ -24,7 +32,8 @@ function AddFamilyForm() {
             mobile_no: $mobile_no,
             thaali_size: MEDIUM,
             status: active,
-            imgurl: "http://url.com"
+            imgurl: $imgurl,
+            jamaat: $jamaat
         }){
             record{
             its_id
@@ -70,7 +79,9 @@ function AddFamilyForm() {
                                 first_name: fullName.split(' ')[0],
                                 last_name: fullName.split(' ')[1],
                                 address,
-                                mobile_no: Number(mobile_no)
+                                mobile_no: Number(mobile_no),
+                                jamaat,
+                                imgurl: "http://"+its_id+".com"
                             }
                         })}>Add Family</button>
                     </div>

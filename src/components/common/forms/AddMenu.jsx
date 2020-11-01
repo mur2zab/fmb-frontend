@@ -21,7 +21,7 @@ function AddMenu(){
                 <div className="add-family-form-div2">
                     <input type="text" placeholder="Salavat" name="salavat"/>
                     
-                    <button type="submit">Add Family</button>
+                    <button type="submit">Add Menu</button>
                 </div>
             </div>
         </div>

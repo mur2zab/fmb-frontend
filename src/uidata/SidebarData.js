@@ -27,12 +27,12 @@ export const SidebarData = [
         icon: <AiIcons.AiFillGithub/>,
         cName: 'nav-text'
     },
-    {
-        title: 'Scanning',
-        path: '/scanning',
-        icon: <AiIcons.AiFillSecurityScan/>,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Scanning',
+    //     path: '/scanning',
+    //     icon: <AiIcons.AiFillSecurityScan/>,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'Calender Menu',
         path: '/calender',

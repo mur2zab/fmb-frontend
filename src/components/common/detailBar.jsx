@@ -11,7 +11,8 @@ function DetailBar() {
     query{
         userOne{
           its_id
-          mobile_no
+          first_name,
+          last_name
         }
     }
   `
@@ -27,7 +28,7 @@ function DetailBar() {
                 <div className="detailbar-item-text detailbar-menu-items">
                     <div className="detailbar-data">
                         <FaIcons.FaUser />
-                        <p>{data.userOne.mobile_no}</p>
+                        <p>{data.userOne.first_name + " "+ data.userOne.last_name}</p>
                     </div>
                     <div className="detailbar-data">
                         <FaIcons.FaUserEdit />
