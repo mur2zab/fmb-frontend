@@ -1,0 +1,48 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.notFound {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/not-found.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.notFound h1 {
+  font-size: 105px;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  position: relative;
+  font-family: PopRegular;
+  top: 30%;
+  border: 5px solid whitesmoke;
+}
+@media (max-width: 375px) and (min-width: 350px) {
+  .notFound h1 {
+    font-size: 35px;
+    text-align: center;
+    padding: 30px;
+    color: white;
+    position: relative;
+    font-family: PopRegular;
+    top: 25%;
+    border: 5px solid whitesmoke;
+  }
+}
+@media (max-width: 414px) and (min-width: 400px) {
+  .notFound h1 {
+    font-size: 35px;
+    text-align: center;
+    padding: 30px;
+    color: white;
+    position: relative;
+    font-family: PopRegular;
+    top: 25%;
+    border: 5px solid whitesmoke;
+  }
+}

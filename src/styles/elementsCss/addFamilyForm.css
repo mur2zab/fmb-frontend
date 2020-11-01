@@ -1,0 +1,75 @@
+.back-to-previous {
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    font-size: 35px;
+    margin: 15px;
+    background-color: #2ACB60;
+    color: #fff;
+    width: max-content;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.add-family-main-form {
+    background-color: #fff;
+    border: 2px solid #2ACB60;
+}
+
+.add-family-main-form h1 {
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+}
+
+.add-family-form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.add-family-form-div1,.add-family-form-div2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+
+}
+
+.add-family-form-div1 input[type=text], input[type=number], input[type=email], textarea[type=text] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #2ACB60;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200%;
+}
+
+.add-family-form-div2 input[type=text]{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #2ACB60;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200%;
+}
+
+.add-family-form-div2 button {
+    background-color: #4CAF50;
+    border: none;
+    font-family: PopRegular;
+    color: white;
+    padding: 7.5px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.add-family-form-div2 button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

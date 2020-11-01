@@ -1,0 +1,36 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  /*background-image: linear-gradient(80deg, #fb9ba1, #ffa3a9, #dd565e, #000000);*/
+  background-color: #E5E5E5;
+}
+
+@font-face {
+  font-family: Popthin;
+  src: url(../fonts/Poppins/Poppins-Thin.ttf);
+}
+
+@font-face {
+  font-family: PopRegular;
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: PopBold;
+  src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Fugaz;
+  src: url(../fonts/Fugaz/FugazOne-Regular.ttf);
+}
+
+.basic-data-card-row, .big-data-card-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+

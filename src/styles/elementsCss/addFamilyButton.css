@@ -1,0 +1,26 @@
+.add-family-button {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #2ACB60;
+    width: 90%;
+    margin: 40px;
+    padding: 50px;
+    cursor: pointer;
+}
+
+.add-family-button-link {
+    text-decoration: none;
+}
+
+.add-family-button-icon {
+    height: 2rem;
+    width: 2rem;
+    margin: 15px;
+}
+
+.add-family-button h1 {
+    font-family: PopRegular;
+    margin: 10px;
+    color: black;
+}

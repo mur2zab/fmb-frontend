@@ -1,0 +1,20 @@
+.card-main-style {
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #888888;
+    width: 20%;
+    border-radius: 15px;
+    border: 1.5px solid #2ACB60;
+    margin: 25px;
+}
+
+.card-main-name {
+    font-size: 18px;
+    margin-left: 5%;
+    font-family: PopRegular;
+}
+
+.card-main-count {
+    font-size: 35px;
+    margin-left: 35%;
+    font-family: Popthin;
+}
