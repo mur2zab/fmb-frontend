@@ -24,3 +24,18 @@
     margin: 10px;
     color: black;
 }
+
+@media (max-width: 770px) {
+    .add-family-button {
+        width: auto;
+    }
+    .add-family-button-icon {
+        height: 4rem;
+        width: 4rem;
+        margin: 10px;
+    }
+    .add-family-button h1 {
+        margin: 5px;
+        font-size: 25px;
+    }
+}

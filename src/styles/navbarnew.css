@@ -1,6 +1,7 @@
 .navbarnew {
     background-color: #ffffff;
     height: 80px;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -27,6 +28,7 @@
     background-color: none;
     position: fixed;
     right: 3%;
+    visibility: hidden;
 }
 
 .nav-menu {

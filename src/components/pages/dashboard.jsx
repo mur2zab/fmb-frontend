@@ -1,8 +1,7 @@
 import React, { Component, useState } from "react";
-//import smallGirl from "../img/kettle-bg.jpg";
 import "../../../src/styles/home.css";
 import Card from "../common/elements/card";
-import ThaliMenuCard from "../common/elements/thaliMenuCard";
+//import ThaliMenuCard from "../common/elements/thaliMenuCard";
 import NavbarNew from "../common/navbarnew";
 import DetailBar from "../common/detailBar";
 import { useHistory } from 'react-router-dom';
@@ -12,7 +11,8 @@ import Scanning from "./scanning";
 
 
 function Dashboard() {
-  const history = useHistory();
+
+ const history = useHistory();
   if (!localStorage.getItem("token")) {
     history.push('/login')
   }

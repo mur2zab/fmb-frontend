@@ -18,3 +18,46 @@
     margin-left: 35%;
     font-family: Popthin;
 }
+
+.table-family {
+    width: 95%;
+    background-color: #fff;
+    border: 2px solid #2ACB60; 
+    border-collapse: collapse; 
+    margin: 15px
+}
+
+.table-headers th{
+    border: 3px solid #2ACB60;
+    margin: 15px;
+    padding: 15px;
+}
+
+.table-data th{
+    border: 3px solid #2ACB60;
+    margin:15px;
+    padding:15px;
+}
+
+@media (max-width: 770px) {
+    .card-main-style {
+        width: 95%;
+        margin: 5px;
+    }
+    .table-family {
+        width: 90%;
+        background-color: #fff;
+        border: 1px solid #2ACB60;
+        margin: 2px
+    }
+    .table-headers th{
+        border: 1px solid #2ACB60;
+        margin: 10px;
+        padding: 10px;
+    }
+    .table-data th{
+        margin:10px;
+        padding:10px;
+        border: 1px solid #2ACB60;
+    }
+}

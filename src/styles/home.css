@@ -34,3 +34,9 @@ body {
   justify-content: space-evenly;
 }
 
+@media (max-width: 770px) {
+  .basic-data-card-row, .big-data-card-row {
+    display: flex;
+    justify-content: center;
+  }
+}

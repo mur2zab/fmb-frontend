@@ -6,7 +6,6 @@
 
 .login-main-style {
     display: flex;
-    
     justify-content: space-around;
     position: fixed;
     left: 15%;
@@ -79,3 +78,38 @@
   }
 
 
+  @media (max-width: 770px) {
+    .login-main-style {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: fixed;
+        left: 10%;
+        top: 15%;
+        background-color: #ffffff;
+        width: 80%;
+        height: 75vh;
+        border: 3px solid#FFD700;
+        border-radius: 0.5%;
+    }
+    .login-logo {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin-top: 100%;
+        margin-left: 15%;
+    }
+    .vertical-line {
+        border-left: 3px solid grey;
+        height: 59vh;
+        visibility: hidden;
+    }
+    .login-form {
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-bottom: 20%;
+    }
+    .login-form h1 {
+        text-align: center;
+    }
+  }
