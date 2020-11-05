@@ -17,10 +17,21 @@ function Dashboard() {
     history.push('/login')
   }
 
-  const fetchUsers = gql`
-  query fetchUser {
+  const FETCH_USERS = gql`
+  query {
   userCount(filter:{status:active})
 }
+`
+
+const FETCH_EVENT = gql`
+query fetchEvent($date: Date){
+    fmb_event(filter: {
+        date: $date
+      }){
+        _id
+    }
+}
+
 `
 
 // const FetchActualCount = gql`
@@ -39,10 +50,23 @@ function Dashboard() {
 //   }
 // }
 // `
-const { loading, error, data } = useQuery(fetchUsers);
 
-if (loading) return <p>Loading...</p>;
-if (error) return <p>error.......</p>
+let d = new Date()
+let day = d.getDate() < 9 ? '0' + d.getDate() : d.getDate(); 
+let date = d.getFullYear() +'-'+ ( d.getMonth() + 1 ) +'-'+ day; 
+const usersObj = useQuery(FETCH_USERS);
+console.log("date", date)
+const eventObj = useQuery(FETCH_EVENT,{variables: {date: date}});
+
+if (usersObj.loading || eventObj.loading) return <p>Loading...</p>;
+if (usersObj.error ) return <p>error.......</p>
+
+if(eventObj.error){
+  console.log("eventObj.error", eventObj.error)
+  return alert("Event not found")
+}
+
+console.log(usersObj.data, eventObj.data)
 
   return (
     <div className="home">
@@ -50,11 +74,11 @@ if (error) return <p>error.......</p>
       <DetailBar />
       <div className="basic-data-card-row">
         <Card cardName={"Daily Thaali Count:"} cardCount={0} />
-        <Card cardName={"Total User Count:"} cardCount={data ? data.userCount : 0} />
+        <Card cardName={"Total User Count:"} cardCount={usersObj.data ? usersObj.data.userCount : 0} />
         {/* <Card cardName={"Notified Users:"} cardCount={25} /> */}
       </div>
       <div>
-        <Scanning />
+        <Scanning eventData={eventObj.data && eventObj.data.fmb_event}/>
       </div>
       {/* <div className="big-data-card-row">
         <ThaliMenuCard date={'1/11/20'} course1={'Malvi Ghost'} course2={"Masoor Dal"} roti={"Roti"} salawat={"Gajar Halvo"} />

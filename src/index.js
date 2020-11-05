@@ -9,7 +9,8 @@ import { ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: 'https://apollo-graphql-mongoose.herokuapp.com/',
+  // uri: 'https://apollo-graphql-mongoose.herokuapp.com/',
+  uri: 'http://localhost:4000/'
 });
 
 
