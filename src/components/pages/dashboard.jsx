@@ -18,7 +18,7 @@ function Dashboard() {
   }
 
   const fetchUsers = gql`
-  query {
+  query fetchUser {
   userCount(filter:{status:active})
 }
 `

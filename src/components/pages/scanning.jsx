@@ -30,10 +30,10 @@ function Scanning() {
                 <div className="scanning-form">
                     <h2>Enter ITS Id:</h2>
                     <input type="text" placeholder="ITS Id" name="its_id" onChange={(event) => setIts(event.target.value)}/>
-                    {data ? <h4>{data.userOne.first_name +" "+ data.userOne.last_name}</h4> : 
+                    {data && data.userOne ? <h4>{data.userOne.first_name +" "+ data.userOne.last_name}</h4> : 
                         <button onClick={() => validate_request({ variables: { its_id: Number(its_id) } })}>Validate</button>
                     }
-                    { data && <button type="button">Submit</button> }
+                    { data && data.userOne && <button type="button">Submit</button> }
                 </div>
             </div>
         </div>
