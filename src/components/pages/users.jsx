@@ -7,8 +7,16 @@ import AddFamilyButton from "../common/elements/addFamily";
 import UserTableData from "../common/elements/userTableData";
 import { UserData } from "../../uidata/UserData";
 import { gql, useQuery } from "@apollo/client"
+import { useHistory } from 'react-router-dom';
+
 
 function Users() {
+
+
+ const history = useHistory();
+ if (!localStorage.getItem("token")) {
+   history.push('/login')
+ }
   
   const fetchUsers = gql`
     query{

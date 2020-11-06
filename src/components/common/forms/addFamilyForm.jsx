@@ -143,7 +143,7 @@ function AddFamilyForm() {
                                 variables: {
                                     its_id: Number(its_id),
                                     first_name: fullName ? fullName.split(' ')[0] : filteredData["NAME"].split(' ')[0] ,
-                                    last_name: fullName ? fullName.split(' ')[1] : filteredData["NAME"].split(' ')[1] ,
+                                    last_name: fullName ? fullName.split(' ')[fullName.split(' ').length - 1] : filteredData["NAME"].split(' ')[filteredData["NAME"].split(' ').length - 1] ,
                                     address,
                                     mobile_no: mobile_no ? Number(mobile_no) : Number(filteredData["MOBILE NO."]),
                                     jamaat,

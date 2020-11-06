@@ -9,10 +9,18 @@ import { Link } from 'react-router-dom';
 
 import * as BsIcons from "react-icons/bs";
 import {IconContext} from 'react-icons';
+import { useHistory } from 'react-router-dom';
+
 
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = (props) => {
+
+    const history = useHistory();
+    if (!localStorage.getItem("token")) {
+      history.push('/login')
+    }
+    
     const now = new Date();
     const events = [
       {
