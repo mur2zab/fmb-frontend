@@ -26,8 +26,8 @@
     "react-pro-sidebar": "^0.4.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "tabletop": "^1.6.3",
-    "read-excel-file": "^4.0.7"
+    "read-excel-file": "^4.0.7",
+    "tabletop": "^1.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
