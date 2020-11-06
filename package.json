@@ -2,6 +2,10 @@
   "name": "fmb-frontend",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=12.19.0",
+    "npm": ">=7.0.6"
+  },
   "dependencies": {
     "@apollo/client": "^3.2.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
