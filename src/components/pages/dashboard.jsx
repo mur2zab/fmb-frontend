@@ -25,13 +25,11 @@ function Dashboard() {
 
 const FETCH_EVENT = gql`
 query fetchEvent($date: Date){
-    fmb_event(filter: {
-        date: $date
-      }){
-        _id
-    }
+  fmb_event(filter: { date: $date }) {
+    date
+    _id
+  }
 }
-
 `
 
 // const FetchActualCount = gql`
@@ -66,7 +64,7 @@ if(eventObj.error){
   return alert("Event not found")
 }
 
-console.log(usersObj.data, eventObj.data)
+console.log(eventObj.data)
 
   return (
     <div className="home">

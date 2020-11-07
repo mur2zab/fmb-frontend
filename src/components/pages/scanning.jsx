@@ -17,14 +17,16 @@ function Scanning({eventData}) {
             its_id
             first_name
             last_name
+            _id
         }
     }`
 
     const SCANNING_USER = gql`
-    mutation scanUser($event_id: String, $attending: Boolean) {
+    mutation scanUser($event_id: String, $user_id: String) {
         userUpdateScanStatusTaken(record :{
             event_id: $event_id,
-            attending: $attending
+            attending: true,
+            user_id: $user_id
         }){
             status
         }
@@ -33,8 +35,8 @@ function Scanning({eventData}) {
 
 
 
-    var [validate_request ,validatedUserObj] = useLazyQuery(VALIDATE_ITS);
-    var [scan_user ,scannedUserObj] = useMutation(SCANNING_USER);
+    let [validate_request ,validatedUserObj] = useLazyQuery(VALIDATE_ITS);
+    let [scan_user ,scannedUserObj] = useMutation(SCANNING_USER);
     
     if (validatedUserObj.loading || scannedUserObj.loading) return <p>Loading...</p>;
     console.log("Scanning -> validatedUserObj", validatedUserObj.data)
@@ -44,12 +46,11 @@ function Scanning({eventData}) {
         return alert("Error occured while validating or scanning")
     }
     let data = validatedUserObj.data
+    console.log(eventData)
 
 
     return (
         <div>
-            {/* <NavbarNew/>
-                <DetailBar/> */}
             <div className="scanning-form-main">
                 <h1>Scanning for Thaali Distribution</h1>
                 <div className="scanning-form">
@@ -58,7 +59,8 @@ function Scanning({eventData}) {
                     {data ? <h4>{data.userOne.first_name + " " + data.userOne.last_name}</h4> :
                         <button onClick={() => validate_request({ variables: { its_id: Number(its_id) } })}>Validate</button>
                     }
-                    {data && <button onClick={() => scan_user({ variables: { event_id: eventData._id , attending: true } })} >Submit</button>}
+                    {data && <button onClick={() => scan_user({ variables: { event_id: eventData._id , user_id: data.userOne._id }})} >Submit</button>}
+                    {/* {/* {window.location.reload()}} */}
                 </div>
             </div>
         </div>
