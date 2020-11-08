@@ -73,10 +73,14 @@ function AddFamilyForm() {
         }
     }
     `
-    const [userCreate, { loading, data }] = useMutation(USER_CREATE);
+    const [userCreate, { loading, error, data }] = useMutation(USER_CREATE);
     console.log("AddFamilyForm -> USER_CREATE", USER_CREATE)
 
     if (loading) return <p>Loading...</p>;
+    if(error){
+        console.log(error);
+        alert("Error while creating user. Please try again ")
+    }
     if (data) {
         console.log(data)
     } 
@@ -109,7 +113,6 @@ function AddFamilyForm() {
         }
     }
 
-    console.log("==============================",fullName,mobile_no)
 
     // const [familyCount, ] = useState('');
 

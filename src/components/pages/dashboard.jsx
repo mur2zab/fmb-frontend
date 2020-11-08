@@ -28,6 +28,9 @@ query fetchEvent($date: Date){
   fmb_event(filter: { date: $date }) {
     date
     _id
+    statistics{
+      actual_count
+    }
   }
 }
 `
@@ -50,7 +53,7 @@ query fetchEvent($date: Date){
 // `
 
 let d = new Date()
-let day = d.getDate() < 9 ? '0' + d.getDate() : d.getDate(); 
+let day = d.getDate() <= 9 ? '0' + d.getDate() : d.getDate(); 
 let date = d.getFullYear() +'-'+ ( d.getMonth() + 1 ) +'-'+ day; 
 const usersObj = useQuery(FETCH_USERS);
 console.log("date", date)
@@ -71,7 +74,7 @@ console.log(eventObj.data)
       <NavbarNew />
       <DetailBar />
       <div className="basic-data-card-row">
-        <Card cardName={"Daily Thaali Count:"} cardCount={0} />
+        <Card cardName={"Daily Thaali Count:"} cardCount={eventObj.data && eventObj.data.fmb_event && eventObj.data.fmb_event.statistics.actual_count.length || 0} />
         <Card cardName={"Total User Count:"} cardCount={usersObj.data ? usersObj.data.userCount : 0} />
         {/* <Card cardName={"Notified Users:"} cardCount={25} /> */}
       </div>
