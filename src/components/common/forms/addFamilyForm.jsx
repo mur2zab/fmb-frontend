@@ -51,12 +51,15 @@ function AddFamilyForm() {
     const [excelData, setExcelData] = useState([])
     const [filteredData, setFilteredData] = useState('')
     const USER_CREATE = gql`
-        mutation userCreate($its_id: Float!, $first_name: String, $last_name: String, $address: String, $mobile_no: Float!, $jamaat: MongoID, $imgurl: String){
+        mutation userCreate($its_id: Float!, $full_name: String!, $mobile_no: Float!, $jamaat: MongoID, $imgurl: String, $building: String, $roomNo: String, $familyCount: Float){
         userCreateOne(record:{
             its_id: $its_id,
-            first_name: $first_name,
-            last_name: $last_name,
-            address: $address
+            full_name: $full_name,
+            address:{
+                building: $building,
+                roomNo: $roomNo
+            },
+            familyCount: $familyCount,
             mobile_no: $mobile_no,
             thaali_size: MEDIUM,
             status: active,
@@ -142,9 +145,10 @@ function AddFamilyForm() {
                             <button type="submit" onClick={() => userCreate({
                                 variables: {
                                     its_id: Number(its_id),
-                                    first_name: fullName ? fullName.split(' ')[0] : filteredData["NAME"].split(' ')[0] ,
-                                    last_name: fullName ? fullName.split(' ')[fullName.split(' ').length - 1] : filteredData["NAME"].split(' ')[filteredData["NAME"].split(' ').length - 1] ,
-                                    address,
+                                    full_name: filteredData["NAME"] ,
+                                    building: filteredData.building,
+                                    roomNo: filteredData.flatNo,
+                                    familyCount: Number(filteredData.TOT) || 1,
                                     mobile_no: mobile_no ? Number(mobile_no) : Number(filteredData["MOBILE NO."]),
                                     jamaat,
                                     imgurl: "http://"+its_id+".com"

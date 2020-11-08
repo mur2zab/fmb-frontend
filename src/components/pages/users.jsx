@@ -24,8 +24,7 @@ function Users() {
         its_id
         mobile_no
         thaali_size
-        first_name
-        last_name
+        full_name
       }
     }
   `
@@ -54,10 +53,9 @@ function Users() {
             {data && data.userMany.map((item, index) => {
             console.log("Users -> item", item)
               return (
-                <UserTableData key={index} Name={item.first_name +' '+ item.last_name} ITS_NO={item.its_id} PhoneNo={item.mobile_no} ThaliSize={item.thaali_size} />
+                <UserTableData key={index} Name={item.full_name} ITS_NO={item.its_id} PhoneNo={item.mobile_no} ThaliSize={item.thaali_size} />
               )
             })}
-            
             </tbody>
         </table>
       </div>

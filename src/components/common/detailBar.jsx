@@ -9,10 +9,9 @@ import {  gql, useQuery } from '@apollo/client';
 function DetailBar() {
     const USER_DETAILS_FETCH = gql`
     query{
-        userOne{
+        userOne(filter: {its_id: 78611053 } ){
           its_id
-          first_name,
-          last_name
+          full_name
         }
     }
   `
@@ -28,11 +27,11 @@ function DetailBar() {
                 <div className="detailbar-item-text detailbar-menu-items">
                     <div className="detailbar-data">
                         <FaIcons.FaUser />
-                        <p>{data.userOne.first_name + " "+ data.userOne.last_name}</p>
+                        <p>{data.userOne.full_name}</p>
                     </div>
                     <div className="detailbar-data">
                         <FaIcons.FaUserEdit />
-                        <p>Members</p>
+                        <p>Member</p>
                     </div>
                     <div className="detailbar-data">
                         <FaIcons.FaIdCard />

@@ -15,8 +15,7 @@ function Scanning({eventData}) {
             its_id: $its_id,
         }){
             its_id
-            first_name
-            last_name
+            full_name
             _id
         }
     }`
@@ -56,7 +55,7 @@ function Scanning({eventData}) {
                 <div className="scanning-form">
                     <h2>Enter ITS Id:</h2>
                     <input type="text" placeholder="ITS Id" name="its_id" onChange={(event) => setIts(event.target.value)} />
-                    {data ? <h4>{data.userOne.first_name + " " + data.userOne.last_name}</h4> :
+                    {data ? <h4>{data.userOne.full_name }</h4> :
                         <button onClick={() => validate_request({ variables: { its_id: Number(its_id) } })}>Validate</button>
                     }
                     {data && <button onClick={() => scan_user({ variables: { event_id: eventData._id , user_id: data.userOne._id }})} >Submit</button>}
